@@ -1,0 +1,19 @@
+{
+  "data": [
+    {
+      "name": "Ironhand Wine Bar",
+      "description": "Marketing Strategy",
+      "leaders": "Me"
+    },
+    {
+      "name": "South Bend Cubs",
+      "description": "New Offering Strategy",
+      "leaders": "Me"
+    },
+    {
+      "name": "Off Map Glamping",
+      "description": "Expansion Strategy",
+      "leaders": "Me"
+    }
+  ]
+}
