@@ -1,4 +1,4 @@
 // return the leaders of a project
-export function ProjectLeaders({ projectLeaders }) {
-  return <div>Leaders: {projectLeaders}</div>;
+export const ProjectLeaders = ( projectLeaders ) => {
+  return <div>Leaders: {projectLeaders['projectLeaders']}</div>;
 }

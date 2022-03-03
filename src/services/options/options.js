@@ -1,7 +1,13 @@
-// service that imports the json data for the navigation bar
-export function getOptions() {
-  const axios = window.axios;
-  return axios.get("../services/options/options.json").then((response) => {
-    return response.data.data;
+import Parse from "parse";
+
+// READ operation - get all lessons in Parse class Options
+export const getAllOptions = () => {
+  const Options = Parse.Object.extend("Options");
+  const query = new Parse.Query(Options);
+  return query.find().then((results) => {
+    // returns array of Option objects
+    return results;
   });
-}
+};
+
+export default getAllOptions;

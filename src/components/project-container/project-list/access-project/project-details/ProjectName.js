@@ -1,4 +1,4 @@
 // return the name of a project
-export function ProjectName({ projectName }) {
-  return <div>Name: ${projectName}</div>;
+export const ProjectName = (projectName ) =>{
+  return <div>Name: {projectName['projectName']}</div>;
 }

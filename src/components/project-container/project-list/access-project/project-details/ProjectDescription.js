@@ -1,4 +1,4 @@
 // return the description of a project
-export function ProjectDescription({ projectDescription }) {
-  return <div>Description: {projectDescription}</div>;
+export const ProjectDescription = (projectDescription) => {
+  return <div>Description: {projectDescription['projectDescription']}</div>;
 }

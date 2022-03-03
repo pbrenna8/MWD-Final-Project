@@ -1,5 +1,5 @@
 // function to return the html for login
-export function LogIn() {
+export default function LogIn() {
   return ( <div class="login">
     <h1 class="heading">Sign In to Your Account!</h1>
     <div class="option">

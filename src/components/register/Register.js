@@ -1,6 +1,6 @@
-import { html } from "https://unpkg.com/htm/preact/standalone.module.js";
 
-export function Register() {
+
+export default function Register() {
   return (
     <div class="option">
       <h1 class="heading">Sign Up for Our Email List!</h1>

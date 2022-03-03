@@ -1,13 +1,13 @@
 import React from "react";
 
 // import functions needed
-import  getOptions  from "./src/services/options/options.js";
-import  NavBar  from "./components/nav-bar/NavBar.js";
-import  ProjectContainer  from "./components/project-container/ProjectContainer.js";
-import  LogIn  from "./components/login/LogIn.js";
-import  Register  from "./components/register/Register.js";
-import  About  from "./components/about/About.js";
-import  Home  from "./components/home/Home.js";
+import  getAllOptions  from "../services/options/options.js";
+import  NavBar  from "./nav-bar/NavBar.js";
+import  ProjectContainer  from "./project-container/ProjectContainer.js";
+import  LogIn  from "./login/LogIn.js";
+import  Register  from "./register/Register.js";
+import  About  from "./about/About.js";
+import  Home  from "./home/Home.js";
 
 import {
   BrowserRouter as Router,
@@ -22,13 +22,15 @@ export default function Components() {
   const [options, setOptions] = React.useState([]);
 
   React.useEffect(() => {
-    return getOptions().then((data) => {
+    getAllOptions().then((data) => {
+      console.log(data);
       setOptions(data);
     });
   }, []);
 
   return (
     <Router>
+      <div><NavBar options={options} /></div>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/About" component={About} />
@@ -37,7 +39,6 @@ export default function Components() {
         <Route path="/Register" component={Register} />
         <Redirect to="/" />
       </Switch>
-      <div><NavBar options={options} /></div>
     </Router>
   );
 }

@@ -1,15 +1,15 @@
 import React from "react";
 
 // import data and project card functions
-import { getProjects } from "../../../services/projects/projects.js";
+import { getAllProjects } from "../../../services/projects/projects.js";
 import { SingleProject } from "./access-project/SingleProject.js";
 
-export function ProjectList() {
+export default function ProjectList() {
   // get data for the projects
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    return getProjects().then((data) => {
+    return getAllProjects().then((data) => {
       setProjects(data);
     });
   }, []);
@@ -24,7 +24,7 @@ export function ProjectList() {
   return(
     <ul>
       {projects.map((project) =>(
-          <li>
+          <li key={project.id}>
             <SingleProject
               project={project}
               data="Click for Status"
