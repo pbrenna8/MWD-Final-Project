@@ -35,6 +35,7 @@ Feature 3
 - Routing
 - UML Diagram
 - Component Tree Diagram
+- CHANGELOG.md
    
 ### Changed
 - Configured in React
