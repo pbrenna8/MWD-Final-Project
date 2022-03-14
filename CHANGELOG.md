@@ -29,6 +29,8 @@ Feature 3
 - N/A
  
 ## [0.2.0] - 2022-03-16
+
+Feature 4
  
 ### Added
 - Parse Models

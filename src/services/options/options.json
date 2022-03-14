@@ -1,9 +1,0 @@
-{
-  "data": [
-    { "option": "Home", "url": "#" },
-    { "option": "About", "url": "#" },
-    { "option": "Projects", "url": "#" },
-    { "option": "Login", "url": "#" },
-    { "option": "Register", "url": "#" }
-  ]
-}
