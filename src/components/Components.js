@@ -9,12 +9,14 @@ import  Register  from "./register/Register.js";
 import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
 
+// import router functions
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect
 } from "react-router-dom";
+
 
 export default function Components() {
 
@@ -27,6 +29,8 @@ export default function Components() {
       setOptions(data);
     });
   }, []);
+
+  // set up the MPA with routing to call NavBar
 
   return (
     <Router>

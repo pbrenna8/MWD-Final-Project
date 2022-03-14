@@ -1,4 +1,5 @@
 // function to return the html for login
+// TODO: add the authentication Feature 5 as well as a class for login
 export default function LogIn() {
   return ( <div class="login">
     <h1 class="heading">Sign In to Your Account!</h1>

@@ -1,5 +1,5 @@
-
-
+// Return HTML for register
+// TODO: add the authentication Feature 5 as well as a class for login
 export default function Register() {
   return (
     <div class="option">
