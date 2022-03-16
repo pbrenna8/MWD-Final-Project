@@ -9,7 +9,7 @@ export default function ProjectList() {
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    return getAllProjects().then((data) => {
+    return getAllProjects("5XYZvZpPQv").then((data) => {
       setProjects(data);
     });
   }, []);
@@ -25,6 +25,7 @@ export default function ProjectList() {
     <ul>
       {projects.map((project) =>(
           <li key={project.id}>
+            {project.get(("user").get("username")) }
             <SingleProject
               project={project}
               data="Click for Status"
