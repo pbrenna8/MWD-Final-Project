@@ -1,14 +1,28 @@
 import Parse from "parse";
 // READ operation - get all lessons in Parse class Projects
-export const getAllProjects = (objectID) => {
-  const queryUserID = objectID;
-  const Projects = Parse.Object.extend("Projects");
-  const query = new Parse.Query(Projects);
 
-  query.equalTo("user",queryUserID);
-
-  return query.find().then((results) => {
+export const getProjectsByUser = (userID) => {
+  //const queryUserID = objectID;
+  
+  const User = Parse.Object.extend("_User");
+  const userQuery = new Parse.Query(User);
+  return userQuery.get(userID).then((user) => {
     // returns array of Project objects
+    console.log("user", user); 
+    return user;
+  }).then((result) => {
+    // returns array of Project objects
+    const Projects = Parse.Object.extend("Projects");
+    const query = new Parse.Query(Projects);
+
+    query.equalTo("user",result);
+    query.include("user"); 
+    return query.find().then((results) => {
+    // returns array of Project objects
+    console.log("projects", results); 
     return results;
   });
+  });
+
+  
 };

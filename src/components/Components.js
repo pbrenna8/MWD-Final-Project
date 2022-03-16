@@ -33,6 +33,7 @@ export default function Components() {
   // set up the MPA with routing to call NavBar
 
   return (
+    <div>
     <Router>
       <div><NavBar options={options} /></div>
       <Switch>
@@ -44,5 +45,6 @@ export default function Components() {
         <Redirect to="/" />
       </Switch>
     </Router>
+    </div>
   );
 }

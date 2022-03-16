@@ -1,7 +1,7 @@
 import React from "react";
 
 // import data and project card functions
-import { getAllProjects } from "../../../services/projects/projects.js";
+import { getProjectsByUser } from "../../../services/projects/projects.js";
 import { SingleProject } from "./access-project/SingleProject.js";
 
 export default function ProjectList() {
@@ -9,7 +9,7 @@ export default function ProjectList() {
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    return getAllProjects("5XYZvZpPQv").then((data) => {
+    return getProjectsByUser("5XYZvZpPQv").then((data) => { // hard coded one user
       setProjects(data);
     });
   }, []);
@@ -22,10 +22,11 @@ export default function ProjectList() {
 
   // return the project cards
   return(
+    <div>
     <ul>
       {projects.map((project) =>(
           <li key={project.id}>
-            {project.get(("user").get("username")) }
+            {project.get("user").get("username") }
             <SingleProject
               project={project}
               data="Click for Status"
@@ -34,5 +35,6 @@ export default function ProjectList() {
           </li>
       ))}
     </ul>
+    </div>
   );
 }
