@@ -45,3 +45,20 @@ Feature 4
 ### Fixed
  
 - N/A
+
+## [0.3.0] - 2022-03-30
+
+Feature 5
+ 
+### Added
+- Auth Parse Service
+- Auth Module
+- Protected Routing
+- Checking Navigation with Routes and Authentication
+   
+### Changed
+- Can't navigate without authentication
+ 
+### Fixed
+ 
+- N/A

@@ -4,8 +4,8 @@ import React from "react";
 import  getAllOptions  from "../services/options/options.js";
 import  NavBar  from "./nav-bar/NavBar.js";
 import  ProjectContainer  from "./project-container/ProjectContainer.js";
-import  LogIn  from "./login/LogIn.js";
-import  Register  from "./register/Register.js";
+import  LogIn  from "./auth/AuthLogin";
+import  Register  from "./auth/AuthRegister";
 import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
 
