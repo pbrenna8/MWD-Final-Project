@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthService";
 import { useHistory } from "react-router-dom";
 import AuthForm from "./AuthForm";
+import Parse from "parse";
 
 const AuthRegister = () => {
   const [newUser, setNewUser] = useState({
@@ -46,6 +47,11 @@ const AuthRegister = () => {
   };
 
   const onSubmitHandler = (e) => {
+    var currentUser = Parse.User.current();
+    if (currentUser) {
+        // do stuff with the user
+        Parse.User.logOut();
+    } 
     e.preventDefault();
     console.log("submitted: ", e.target);
     setAdd(true);

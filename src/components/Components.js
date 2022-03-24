@@ -8,6 +8,7 @@ import  LogIn  from "./auth/AuthLogin";
 import  Register  from "./auth/AuthRegister";
 import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
+import  LogOut from "./auth/AuthLogout";
 
 // import router functions
 import {
@@ -25,7 +26,6 @@ export default function Components() {
 
   React.useEffect(() => {
     getAllOptions().then((data) => {
-      console.log(data);
       setOptions(data);
     });
   }, []);
@@ -42,6 +42,7 @@ export default function Components() {
         <Route path="/Projects" component={ProjectContainer} />
         <Route path="/Login" component={LogIn} />
         <Route path="/Register" component={Register} />
+        <Route path="/Logout" component={LogOut} />
         <Redirect to="/" />
       </Switch>
     </Router>

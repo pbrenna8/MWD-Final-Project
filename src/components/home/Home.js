@@ -9,6 +9,7 @@ export default function Home() {
   useEffect(() => {
     async function checkUser() {
       const currentUser = await Parse.User.currentAsync();
+      console.log(currentUser);
       if (!currentUser) {
         alert("You need to be logged in to access this page");
         setFlag(false);
@@ -20,10 +21,7 @@ export default function Home() {
   }, []);
 
   // html to export to about page on Components.js
-  return (<div class="about">
-      <h1 class="heading">Welcome to the Irish Consulting Club!</h1>
-      <div>
-      <ProtectedRoute exact path="/Projects" flag={flag} component={Projects} />
-      </div>
+  return (<div className="about">
+      <h1 className="heading">Welcome to the Irish Consulting Club!</h1>
     </div>);
 }

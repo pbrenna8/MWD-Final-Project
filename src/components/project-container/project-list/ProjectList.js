@@ -1,4 +1,5 @@
-import React from "react";
+import React, {useEffect} from "react";
+import Parse from "parse";
 
 // import data and project card functions
 import { getProjectsByUser } from "../../../services/projects/projects.js";
