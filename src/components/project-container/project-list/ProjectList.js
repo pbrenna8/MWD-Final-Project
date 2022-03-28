@@ -1,5 +1,4 @@
-import React, {useEffect} from "react";
-import Parse from "parse";
+import React from "react";
 
 // import data and project card functions
 import { getProjectsByUser } from "../../../services/projects/projects.js";
@@ -10,7 +9,7 @@ export default function ProjectList() {
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    return getProjectsByUser(Parse.User.current().get("objectId")).then((data) => { // hard coded one user
+    return getProjectsByUser("5XYZvZpPQv").then((data) => {
       setProjects(data);
     });
   }, []);

@@ -9,7 +9,7 @@ export default function NavBar({ options }) {
       <li className="heading">Irish Consulting Club</li>
       {options.map((option) => (
           <li key={option.id} className="option">
-            <Link to={`/${option.get("option")}`}>{option.get("option")}</Link>
+            <Link to={{pathname:`/${option.get("option")}`,state:`/${option.get("option")}Auth`}}>{option.get("option")}</Link>
           </li>
       ))}
     </ul>
