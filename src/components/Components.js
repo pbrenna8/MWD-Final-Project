@@ -4,9 +4,11 @@ import React from "react";
 import  getAllOptions  from "../services/options/options.js";
 import  NavBar  from "./nav-bar/NavBar.js";
 import  ProjectContainer  from "./project-container/ProjectContainer.js";
+import ProjectsAuth from "../services/projects/projectAuth.js"
 import  LogIn  from "./auth/AuthLogin";
 import  Register  from "./auth/AuthRegister";
 import  About  from "./about/About.js";
+import AboutAuth from "../services/projects/aboutAuth.js"
 import  Home  from "./home/Home.js";
 import  LogOut from "./auth/AuthLogout";
 
@@ -38,8 +40,10 @@ export default function Components() {
       <div><NavBar options={options} /></div>
       <Switch>
         <Route path="/" exact component={Home} />
-        <Route path="/About" component={About} />
-        <Route path="/Projects" component={ProjectContainer} />
+        <Route path="/About" component={AboutAuth} />
+        <Route path="/AboutAuth" component={About}/>
+        <Route path="/Projects" component={ProjectsAuth} />
+        <Route path="/ProjectsAuth" component={ProjectContainer} />
         <Route path="/Login" component={LogIn} />
         <Route path="/Register" component={Register} />
         <Route path="/Logout" component={LogOut} />

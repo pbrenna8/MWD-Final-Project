@@ -10,7 +10,7 @@ export default function ProjectList() {
   const [projects, setProjects] = React.useState([]);
 
   React.useEffect(() => {
-    return getProjectsByUser("5XYZvZpPQv").then((data) => { // hard coded one user
+    return getProjectsByUser(Parse.User.current().get("objectId")).then((data) => { // hard coded one user
       setProjects(data);
     });
   }, []);
