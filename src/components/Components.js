@@ -10,6 +10,8 @@ import  Register  from "./auth/AuthRegister";
 import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
 import  LogOut from "./auth/AuthLogout";
+import loginCheck from "./auth/AuthUnprotected";
+import loginCheck2 from "./auth/AuthUnprotectedReg";
 
 // import router functions
 import {
@@ -43,8 +45,10 @@ export default function Components() {
         <Route path="/AboutAuth" component={About}/>
         <Route path="/Projects" component={Auth} />
         <Route path="/ProjectsAuth" component={ProjectContainer} />
-        <Route path="/Login" component={LogIn} />
-        <Route path="/Register" component={Register} />
+        <Route path="/Login" component={loginCheck} />
+        <Route path="/LoginAuth" component={LogIn} />
+        <Route path="/Register" component={loginCheck2} />       
+        <Route path="/RegisterAuth" component={Register} />
         <Route path="/Logout" component={LogOut} />
         <Redirect to="/" />
       </Switch>
