@@ -23,7 +23,6 @@ const AuthLogin = () => {
         if (userRead) {
           alert(`${userRead.get("firstName")}, you successfully logged in!`);
         }
-        // TODO: redirect user to main app
         setAdd(false);
         history.push("/home");
       });

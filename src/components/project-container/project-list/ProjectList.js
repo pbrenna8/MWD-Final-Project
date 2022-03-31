@@ -8,6 +8,7 @@ export default function ProjectList() {
   // get data for the projects
   const [projects, setProjects] = React.useState([]);
 
+  // TODO: Create feature that does not need a hard coded user ID/many to many relation
   React.useEffect(() => {
     return getProjectsByUser("5XYZvZpPQv").then((data) => {
       setProjects(data);

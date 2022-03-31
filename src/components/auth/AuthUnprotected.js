@@ -1,20 +1,18 @@
 import React from "react"; 
 import Parse from "parse"; 
 
-import UnprotectedRoute from "../../services/UnprotectedRoute.js"; 
-import Login from "./AuthLogin.js"; 
+import UnprotectedRoute from "../../services/AppTools/UnprotectedRoute.js"; 
 
-export default function Auth(state){
-    console.log(state.location.state);
+// blocking the user if they've registered/logged in 
+export default function AuthCheck(state){
+    console.log(state);
     return(
         <div> 
             <UnprotectedRoute 
                 exact 
                 path={state.location.state}
                 flag={Parse.User.current()}
-                component={Login}
             />
         </div>
-
     )
 }

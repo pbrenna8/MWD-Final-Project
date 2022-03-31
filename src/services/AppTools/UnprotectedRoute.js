@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 // You can pass props using the spread operator to throw them on an object if there are too many to break out
-const UnprotectedRoute = ({ component: Component, flag, ...rest }) => {
+const UnprotectedRoute = ({ flag, ...rest }) => {
   const history = useHistory();
   const goBackHandler = () => {
     history.goBack();

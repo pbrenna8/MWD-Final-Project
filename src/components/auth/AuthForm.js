@@ -1,5 +1,6 @@
 import React from "react";
 
+// form to input login/register information
 const AuthForm = ({ user, flag, onChange, onSubmit }) => {
   return (
     <div>

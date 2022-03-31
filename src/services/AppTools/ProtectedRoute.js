@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 
 // You can pass props using the spread operator to throw them on an object if there are too many to break out
-const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
+const ProtectedRoute = ({ flag, ...rest }) => {
   const history = useHistory();
   const goBackHandler = () => {
     history.goBack();
@@ -19,8 +19,8 @@ const ProtectedRoute = ({ component: Component, flag, ...rest }) => {
         <div>
           <p>You have not been authorized. Please Register or Log In before
             looking for a project!</p> 
-            <Link to="/Login"> <button>Login</button></Link>
-            <Link to="/Register"><button>Register</button></Link>
+            <Link to={{pathname: "/Login",state:`/LoginAuth`}}><button>Login</button></Link>
+            <Link to={{pathname: "/Register",state:`/RegisterAuth`}}><button>Register</button></Link>
             <button onClick={goBackHandler}>Go back.</button>
         </div>
       )}

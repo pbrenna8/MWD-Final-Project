@@ -11,7 +11,6 @@ import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
 import  LogOut from "./auth/AuthLogout";
 import loginCheck from "./auth/AuthUnprotected";
-import loginCheck2 from "./auth/AuthUnprotectedReg";
 
 // import router functions
 import {
@@ -34,7 +33,7 @@ export default function Components() {
   }, []);
 
   // set up the MPA with routing to call NavBar
-
+  // All auth/check routes are for authentication
   return (
     <div>
     <Router>
@@ -47,7 +46,7 @@ export default function Components() {
         <Route path="/ProjectsAuth" component={ProjectContainer} />
         <Route path="/Login" component={loginCheck} />
         <Route path="/LoginAuth" component={LogIn} />
-        <Route path="/Register" component={loginCheck2} />       
+        <Route path="/Register" component={loginCheck} />       
         <Route path="/RegisterAuth" component={Register} />
         <Route path="/Logout" component={LogOut} />
         <Redirect to="/" />
