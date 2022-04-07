@@ -22,3 +22,19 @@ export const getProjectsByUser = (userID) => {
 
   
 };
+
+// CREATE operation - new project with Name
+export const createProject = (newProject) => {
+  console.log("Creating: ", newProject.name);
+  const Project = Parse.Object.extend("Projects");
+  const project = new Project();
+  // using setter to UPDATE the object
+  project.set("name", newProject.name);
+  project.set("description", newProject.description);
+  project.set("leaders", newProject.leaders);
+  console.log("Project: ", newProject);
+  return project.save().then((result) => {
+    // returns new Project object
+    return result;
+  });
+};

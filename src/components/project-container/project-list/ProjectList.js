@@ -4,7 +4,7 @@ import React from "react";
 import { getProjectsByUser } from "../../../services/projects/projects.js";
 import { SingleProject } from "./access-project/SingleProject.js";
 
-export default function ProjectList() {
+export default function ProjectList({onClickHandler, onChangeHandler}) {
   // get data for the projects
   const [projects, setProjects] = React.useState([]);
 
@@ -36,6 +36,19 @@ export default function ProjectList() {
           </li>
       ))}
     </ul>
+    <hr></hr>
+    Create a Project:
+    <form>
+        Project Name:
+        <input text="test" onChange={onChangeHandler} />
+        Project Description:
+        <input text="test" onChange={onChangeHandler} />
+        Project Leaders:
+        <input text="test" onChange={onChangeHandler} />
+        <button type="submit" onClick={onClickHandler}>
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
