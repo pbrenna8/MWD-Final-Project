@@ -22,6 +22,11 @@ export default function ProjectContainer() {
     // Check for add flag and make sure name state variable is defined
     if (project && add) {
       createProject(project).then((projectCreated) => {
+        if (projectCreated) {
+          alert(
+            `You successfully created a new project titled: ${projectCreated.get("name")}!`
+          );
+        }
         setAdd(false);
         setProjects([...projects, projectCreated]);
       });
@@ -40,12 +45,12 @@ export default function ProjectContainer() {
   const onChangeHandler = (e) => {
     e.preventDefault();
     console.log(e.target);
-    const { name, value: newValue } = e.target;
+    const { val, value: newValue } = e.target;
     console.log(newValue);
 
     setProject({
       ...project,
-      [name]: newValue
+      [val]: newValue
     });
 
   };

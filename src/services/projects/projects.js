@@ -36,5 +36,7 @@ export const createProject = (newProject) => {
   return project.save().then((result) => {
     // returns new Project object
     return result;
+  }).catch((error) => {
+    alert(`Error: ${error.message}`);
   });
 };
