@@ -22,6 +22,6 @@ export default function Home() {
 
   // html to export to about page on Components.js
   return (<div className="about">
-      <h1 className="heading">Welcome to the Irish Consulting Club!</h1>
+      <h1 className="heading">Welcome to the Irish Consulting Club!</h1>      
     </div>);
 }
