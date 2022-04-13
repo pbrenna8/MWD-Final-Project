@@ -24,7 +24,7 @@ const AuthLogin = () => {
           alert(`${userRead.get("firstName")}, you successfully logged in!`);
         }
         setAdd(false);
-        history.push("/home");
+        history.push("/");
       });
     }
   }, [user, add, history]);

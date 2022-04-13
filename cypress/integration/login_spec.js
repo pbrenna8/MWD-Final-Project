@@ -2,9 +2,15 @@ describe("/Login", () => {
     it("check login", () => {
       cy.visit("/LoginAuth");
     });
-  
-    // it("greets with Sign in", () => {
-    //   cy.contains("h1", "Sign In");
+    it("asks for email", () => {
+      cy.contains("Email");
+    });
+    it("asks for password", () => {
+      cy.contains("Password");
+    });
+    // it("requires email", () => {
+    //   cy.get("form").contains("Email").click();
+    //   cy.get(".error-messages").should("contain", "Please fill out this field");
     // });
   
     // it("links to #/register", () => {
@@ -27,9 +33,8 @@ describe("/Login", () => {
     //   cy.get(".error-messages").should("contain", "email or password is invalid");
     // });
   
-    // it("navigates to #/ on successful login", () => {
-    //   cy.get("[data-test=email]").type("joe@example.com");
-    //   cy.get("[data-test=password]").type("joe#{enter}");
-    //   cy.hash().should("eq", "#/");
-    // });
+    it("navigates to / on successful login", () => {
+      cy.get("#email-input").type("pjbren@hotmail.com");
+      cy.get("#password-input").type("password{enter}");
+    });
   });

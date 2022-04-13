@@ -1,35 +1,48 @@
 describe("/Register", () => {
-    beforeEach(() => {
-      cy.visit("/Register");
+    it("check nav to register", () => {
+      cy.visit("/RegisterAuth");
     });
-  
-    it("greets with Sign in", () => {
-      cy.contains("h1", "Sign In");
+    it("asks for First Name", () => {
+        cy.contains("First Name");
+      });
+    it("asks for Last Name", () => {
+        cy.contains("Last Name");
+      });
+    it("asks for email", () => {
+      cy.contains("Email");
     });
-  
-    it("links to #/register", () => {
-      cy.contains("Need an account?").should("have.attr", "href", "#/register");
+    it("asks for password", () => {
+      cy.contains("Password");
     });
+    // it("requires email", () => {
+    //   cy.get("form").contains("Email").click();
+    //   cy.get(".error-messages").should("contain", "Please fill out this field");
+    // });
   
-    it("requires email", () => {
-      cy.get("form").contains("Sign in").click();
-      cy.get(".error-messages").should("contain", "email can't be blank");
-    });
+    // it("links to #/register", () => {
+    //   cy.contains("Need an account?").should("have.attr", "href", "#/register");
+    // });
   
-    it("requires password", () => {
-      cy.get("[data-test-email]").type("joe@example.com{enter}");
-      cy.get(".error-messages").should("contain", "password can't be blank");
-    });
+    // it("requires email", () => {
+    //   cy.get("form").contains("Sign in").click();
+    //   cy.get(".error-messages").should("contain", "email can't be blank");
+    // });
   
-    it("requires valid username and password", () => {
-      cy.get("[data-test=email]").type("joe@example.com");
-      cy.get("[data-test=password]").type("invalid{enter}");
-      cy.get(".error-messages").should("contain", "email or password is invalid");
-    });
+    // it("requires password", () => {
+    //   cy.get("[data-test-email]").type("joe@example.com{enter}");
+    //   cy.get(".error-messages").should("contain", "password can't be blank");
+    // });
   
-    it("navigates to #/ on successful login", () => {
-      cy.get("[data-test=email]").type("joe@example.com");
-      cy.get("[data-test=password]").type("joe#{enter}");
-      cy.hash().should("eq", "#/");
+    // it("requires valid username and password", () => {
+    //   cy.get("[data-test=email]").type("joe@example.com");
+    //   cy.get("[data-test=password]").type("invalid{enter}");
+    //   cy.get(".error-messages").should("contain", "email or password is invalid");
+    // });
+  
+    it("navigates to / on successful registration", () => {
+      cy.get("#first-name-input").type("PJ");
+      cy.get("#last-name-input").type("Brennan");
+      cy.get("#email-input").type("pjbren@hotmail.com");
+      cy.get("#password-input").type("password{enter}");
     });
   });
