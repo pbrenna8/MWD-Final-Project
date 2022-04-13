@@ -40,3 +40,12 @@ export const createProject = (newProject) => {
     alert(`Error: ${error.message}`);
   });
 };
+
+// DELETE operation - remove lesson by ID
+export const removeProject = (id) => {
+  const Project = Parse.Object.extend("Projects");
+  const query = new Parse.Query(Project);
+  return query.get(id).then((project) => {
+    project.destroy();
+  });
+};

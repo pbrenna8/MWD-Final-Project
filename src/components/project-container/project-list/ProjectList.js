@@ -1,10 +1,11 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 // import data and project card functions
-import { getProjectsByUser } from "../../../services/projects/projects.js";
+import { getProjectsByUser, removeProject } from "../../../services/projects/projects.js";
 import { SingleProject } from "./access-project/SingleProject.js";
 
-export default function ProjectList({onClickHandler, onChangeHandler}) {
+export default function ProjectList() {
   // get data for the projects
   const [projects, setProjects] = React.useState([]);
 
@@ -14,6 +15,25 @@ export default function ProjectList({onClickHandler, onChangeHandler}) {
       setProjects(data);
     });
   }, []);
+
+  const [remove, setRemove] = React.useState("");
+
+  // UseEffect that runs when changes
+  // are made to the state variables/flags
+  React.useEffect(() => {
+    // Check if remove state variable is holding an ID
+    if (remove.length > 0) {
+      //Filter the old lessons list to take out selected lesson
+      const newProjects = projects.filter((project) => project.id !== remove);
+      setProjects(newProjects);
+
+      removeProject(remove).then(() => {
+        console.log("Removed lesson with ID: ", remove);
+      });
+      // Reset remove state variable
+      setRemove("");
+    }
+  }, [projects, remove]);
 
   // button alert for each project
   // TODO: find another mixed functionality for this
@@ -26,6 +46,7 @@ export default function ProjectList({onClickHandler, onChangeHandler}) {
     <div>
     <ul>
       {projects.map((project) =>(
+        <div>
           <li key={project.id}>
             {project.get("user").get("username") }
             <SingleProject
@@ -34,21 +55,19 @@ export default function ProjectList({onClickHandler, onChangeHandler}) {
               onChildClick={clickStatus}
             />
           </li>
+          <button
+          onClick={(e) => {
+            // Set remove variable and trigger re-render
+            setRemove(project.id);
+          }}
+          >
+          Delete
+          </button>
+          </div>
       ))}
     </ul>
     <hr></hr>
-    Create a Project:
-    <form>
-        Project Name:
-        <input text="test" onChange={onChangeHandler} />
-        Project Description:
-        <input text="test" onChange={onChangeHandler} />
-        Project Leaders:
-        <input text="test" onChange={onChangeHandler} />
-        <button type="submit" onClick={onClickHandler}>
-          Submit
-        </button>
-      </form>
+    <Link to="/ProjectCreate"><button>Create a Project</button></Link>
     </div>
   );
 }

@@ -11,6 +11,7 @@ import  About  from "./about/About.js";
 import  Home  from "./home/Home.js";
 import  LogOut from "./auth/AuthLogout";
 import loginCheck from "./auth/AuthUnprotected";
+import ProjectCreate from "./project-create/CreateContainer";
 
 // import router functions
 import {
@@ -49,6 +50,7 @@ export default function Components() {
         <Route path="/Register" component={loginCheck} />       
         <Route path="/RegisterAuth" component={Register} />
         <Route path="/Logout" component={LogOut} />
+        <Route path="/ProjectCreate" component={ProjectCreate}/>
         <Redirect to="/" />
       </Switch>
     </Router>
