@@ -7,7 +7,7 @@ import { ProjectLeaders } from "./project-details/ProjectLeaders.js";
 // return a project card with the status button
 export const SingleProject = ({ project, data, onChildClick }) => {
   return(
-    <div className="single-project">
+    <div>
       <ProjectName projectName={project.get("name")} />
       <ProjectDescription projectDescription={project.get("description")} />
       <ProjectLeaders projectLeaders={project.get("leaders")} />

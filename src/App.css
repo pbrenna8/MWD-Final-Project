@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Updock&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
 .App {
   text-align: center;
 }
@@ -42,8 +45,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-end;
-  font-family: "Ubuntu", sans-serif;
-
+  font-family: 'Updock', cursive;
   list-style: none;
   margin: 0;
   background: #046a38;
@@ -87,16 +89,32 @@
   }
 }
 
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+
+
 /* Font Styling for Nav Bar */
 .heading {
   font-weight: bolder;
-  font-family: "Roboto Slab", serif;
+  font-family: 'Updock', cursive;
   color: #046a38;
-  background-color: #8c918e;
+  border-width: 20px;
 }
 
+.about-heading {
+  font-weight: bolder;
+  font-family: 'Titillium Web', cursive;
+  color: #046a38;
+  margin-left: 20px;
+  margin-bottom: -6px; 
+}
+
+
 .option {
-  font-family: "Ubuntu", sans-serif;
+  font-family: "Titillium Web", sans-serif;
   margin-left: 10px;
 }
 
@@ -109,13 +127,102 @@
   list-style: none;
   margin: none;
 }
-/*
-h1 {
- 
-  
-}*/
-/* Font styling for child component pages
- {
-  font-family: "Ubuntu", sans-serif;
+
+.home { 
+  position: relative; 
+}
+.home-image { 
+  display: grid;
+  height: 100%;
+}
+
+.image-format { 
+  width: 100%;
+  height: auto; 
+}
+
+.home-heading { 
+  position: absolute;
+  top: 10%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Titillium Web', cursive;
+  color: #046a38; 
+  font-size: 40px; 
+
+}
+
+.nav-heading { 
+  position: absolute; 
+  left: 20px; 
+  top: 10px; 
+  font-size: 30px; 
+  color: white; 
+}
+
+.about-content{ 
+  display: flex;
+  flex-flow: row wrap;
+  flex: wrap-column; 
+}
+
+.events-heading{ 
+  font-weight: bolder;
+  font-family: 'Titillium Web', cursive;
+  color: #046a38;
   margin-left: 10px;
-}*/
+  margin-bottom: 10px; 
+}
+
+.mission-statement{ 
+  margin-left: 10px;
+  margin-right: 10px;  
+}
+
+.event-container{ 
+  display: flex; 
+  flex-wrap: wrap; 
+  flex-direction: row; 
+}
+
+.item{ 
+  width: 50%; 
+}
+
+.item-text{ 
+  margin-left: 20px; 
+}
+
+.recurring-events{ 
+  font-weight: bolder;
+  font-family: 'Titillium Web', cursive;
+  color: #046a38;
+  margin-left: 10px;
+  margin-bottom: 10px; 
+  margin-top: -10px; 
+}
+
+.indented-bullets{ 
+  margin-left: 20px; 
+  margin-bottom: 20px; 
+}
+
+.main-bullets{ 
+  margin-bottom: 10px;
+}
+
+.project-select{ 
+  margin-left: 20px; 
+}
+
+.create-form{ 
+  margin-left: 50px; 
+  margin-top: 50px; 
+ 
+  border: 5px green; 
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}

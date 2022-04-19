@@ -62,3 +62,20 @@ Feature 5
 ### Fixed
  
 - N/A
+
+Feature 6
+
+Student A - Molly Doyle 
+ 
+### Added
+- Project ownership dropdown filter  
+- Google Calendar Developer Tool Node API 
+- CSS & Website Design
+
+
+### Changed
+- Project layout on page 
+ 
+### Fixed
+ 
+- N/A

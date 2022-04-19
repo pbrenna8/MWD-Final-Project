@@ -29,7 +29,7 @@ const AuthRegister = () => {
         }
         // TODO: redirect user to main app
         setAdd(false);
-        history.push("/home");
+        history.push("/");
       });
     }
   }, [newUser, add, history]);
