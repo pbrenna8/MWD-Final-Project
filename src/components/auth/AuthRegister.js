@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { createUser } from "./AuthService";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import AuthForm from "./AuthForm";
 import Parse from "parse";
 
@@ -13,6 +13,16 @@ const AuthRegister = () => {
   });
 
   const history = useHistory();
+
+  let userCheck = false;
+  if(Parse.User.current() !== null){
+        userCheck = true;
+  }
+  console.log(userCheck);
+
+  const goBackHandler = () => {
+    history.goBack();
+  };
 
   // flags in the state to watch for add/remove updates
   const [add, setAdd] = useState(false);
@@ -59,6 +69,14 @@ const AuthRegister = () => {
 
   return (
     <div>
+    {userCheck ? (       
+         <div>
+        <p>You already registered!</p> 
+          <Link to="/Home"> <button>Home</button></Link>
+          <button onClick={goBackHandler}>Go back.</button>
+      </div>
+    ) : (
+      <div>
       <AuthForm
         user={newUser}
         flag={flag}
@@ -66,6 +84,8 @@ const AuthRegister = () => {
         onSubmit={onSubmitHandler}
       />
     </div>
+    )}
+  </div>
   );
 };
 
