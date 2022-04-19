@@ -71,7 +71,7 @@ const AuthRegister = () => {
     <div>
     {userCheck ? (       
          <div>
-        <p>You already registered!</p> 
+        <p>You already logged in!</p> 
           <Link to="/Home"> <button>Home</button></Link>
           <button onClick={goBackHandler}>Go back.</button>
       </div>

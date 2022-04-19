@@ -17,11 +17,11 @@ describe("/Register", () => {
     it("navigates to / on successful registration", () => {
       cy.get("#first-name-input").type("PJ");
       cy.get("#last-name-input").type("Brennan");
-      cy.get("#email-input").type("pj@hcom");
+      cy.get("#email-input").type("b@a.com");
       cy.get("#password-input").type("password");
       cy.get(".btn").click();
       cy.url().should('eq', 'http://localhost:3000/');
       cy.visit("/Register");
-      cy.contains("You already registered!");
+      cy.contains("You already logged in!");
     });
   });
