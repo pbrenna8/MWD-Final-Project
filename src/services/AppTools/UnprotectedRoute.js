@@ -15,9 +15,11 @@ const UnprotectedRoute = ({ flag, ...rest }) => {
     <div>
       {flag ? (       
            <div>
-          <p>You already logged in!</p> 
-            <Link to="/Home"> <button>Home</button></Link>
+          <h1 class="about-heading">You already logged in!</h1> 
+            <div class="logged-in-buttons">
+            <Link to="/Home"> <button >Home</button></Link>
             <button onClick={goBackHandler}>Go back.</button>
+            </div>
         </div>
        
       ) : (

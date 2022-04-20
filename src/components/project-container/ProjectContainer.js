@@ -20,7 +20,7 @@ export default function ProjectContainer() {
     <div>
       {flag ? ( <div><ProjectList/></div>) : (
         <div>
-          <p>You have not been authorized. Please Register or Log In before
+          <p class="not-authorized">You have not been authorized. Please register or log in before
             looking for a project!</p> 
             <Link to={{pathname: "/Login",state:`/LoginAuth`}}><button>Login</button></Link>
             <Link to={{pathname: "/Register",state:`/RegisterAuth`}}><button>Register</button></Link>

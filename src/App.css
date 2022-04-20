@@ -213,16 +213,113 @@
 
 .project-select{ 
   margin-left: 20px; 
+  font-family: 'Titillium Web', cursive;
 }
 
 .create-form{ 
   margin-left: 50px; 
-  margin-top: 50px; 
- 
+  margin-top: 30px; 
+  margin-bottom: 30px; 
   border: 5px green; 
+  text-align: left;
 }
 
 .fade {
   animation-name: fade;
   animation-duration: 1.5s;
+}
+
+
+.each-project { 
+  margin-left: 20px; 
+  margin-right: 50px; 
+  margin-top: 10px; 
+  border-style: 10px solid green; 
+  font-family: 'Titillium Web', cursive; 
+}
+
+
+
+
+.other-project{ 
+  color: green; 
+}
+
+
+button {
+  
+  box-shadow: 0px 10px 14px -7px #6b7a64;
+	background:linear-gradient(to bottom, #046a38 5%, #046a38 100%);
+	background-color:#046a38;
+	border-radius:4px;
+	border:1px solid #282c34;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:13px;
+	font-weight:bold;
+	padding:6px 12px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #046a38;
+}
+
+.create-button{ 
+  margin-left: 30px; 
+}
+
+.new-project-description{ 
+  font-family: 'Titillium Web', cursive;
+  margin-left: 20px;
+  margin-bottom: 10px; 
+  margin-top: 10px; 
+}
+
+
+.new-project-form{ 
+  font-family: 'Titillium Web', cursive;
+  border:  1px solid #046a38; 
+  margin-top: 10px; 
+  margin-left: 20px; 
+  margin-right: 50px; 
+}
+
+.submit { 
+  margin-bottom: 10px; 
+}
+
+.logout-button { 
+  margin-top: 20px;
+  margin-left: 20px; 
+  text-align: center; 
+}
+
+.logged-in-heading{ 
+  font-family: 'Titillium Web', cursive;
+  margin-left: 20px; 
+}
+
+.logged-in-buttons{ 
+  margin-top: 30px; 
+  margin-left: 40px; 
+}
+
+.form-group{ 
+  margin-left: 30px; 
+  margin-top: 20px; 
+  font-family: 'Titillium Web', cursive; 
+}
+
+.not-authorized{ 
+  font-family: 'Titillium Web', cursive; 
+  text-align: center; 
+  font-weight: bolder;
+  font-family: 'Titillium Web', cursive;
+  color: #046a38;
+  margin-left: 20px;
+  margin-bottom: -6px; 
+}
+
+.redirect-buttons{ 
+  text-align: center; 
 }

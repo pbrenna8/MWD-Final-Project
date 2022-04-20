@@ -110,6 +110,7 @@ export default function ProjectList() {
   
   // return the project cards
   return(
+
     <div>
     <h1 class="about-heading">Current Projects</h1> 
     <br></br>
@@ -127,42 +128,45 @@ export default function ProjectList() {
 
 
 {filter.track1 &&
-<ul>
+<div class="each-project"> 
       {projects.map((project) =>(
         <div>
-          <li key={project.id}>
-            
+          <div class key={project.id}>
+            <div class="project-content"> </div>
             <SingleProject
               project={project}
               data="Click for Status"
               onChildClick={clickStatus}
             />
-          </li>
-          <button
+          </div>
+          <div class="fancy-button"> <button
           onClick={(e) => {
             // Set remove variable and trigger re-render
             setRemove(project.id);
           }}
           >
+          
           Delete
-          </button>
+          </button></div>
           </div>
       ))}
       
-    </ul>
+  
+  </div> 
 }
     
 {filter.track3 &&
-    <ul>
+<div class="each-project"> 
       {All.map((project) =>(
         <div>
-          <li key={project.id}>
+          <div class="project-content" key={project.id}>
+          <br></br>
             <SingleProject
               project={project}
               data="Click for Status"
               onChildClick={clickStatus}
             />
-          </li>
+          </div>
           <button
           onClick={(e) => {
             // Set remove variable and trigger re-render
@@ -173,20 +177,21 @@ export default function ProjectList() {
           </button>
           </div>
       ))}
-    </ul>
+</div>
 }
    
 {filter.track2 &&
-    <ul>
+  <div class="each-project">
       {Other.map((project) =>(
         <div>
-          <li key={project.id}>
-            <SingleProject
+          <div class="other-projects" key={project.id}>
+          <br></br>
+            <SingleProject 
               project={project}
               data="Click for Status"
               onChildClick={clickStatus}
             />
-          </li>
+          </div>
           <button
           onClick={(e) => {
             // Set remove variable and trigger re-render
@@ -195,12 +200,21 @@ export default function ProjectList() {
           >
           Delete
           </button>
+          <br></br>
           </div>
       ))}
-    </ul>
+    </div>
 }
     
-    <Link to="/ProjectCreate"><button>Create a Project</button></Link>
+  <h2 class="about-heading">Create a New Project: </h2>
+    <hr></hr>
+    <div class="new-project-description">Add a new project to your portfolio!</div>
+    <div class="fancy-button">
+    <Link to="/ProjectCreate"><button class="create-button">Create a Project</button></Link></div> 
+    <br></br>
     </div>
+
+
+    
   );
 }

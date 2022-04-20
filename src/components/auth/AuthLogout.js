@@ -12,9 +12,12 @@ const AuthLogout = () => {
         history.push("/");
     }
     return (
-        <div>
+        <div> 
+        <h1 class="about-heading">Log Out</h1> 
+        <div class="logout-button">
             <button onClick ={onClickHandler}>Are you sure?</button>
         </div>
+        </div> 
     );
 };
 

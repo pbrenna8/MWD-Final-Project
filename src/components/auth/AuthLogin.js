@@ -49,6 +49,7 @@ const AuthLogin = () => {
 
   return (
     <div>
+      <h1 class="about-heading">Log In:</h1>
       <AuthForm
         user={user}
         flag={flag}

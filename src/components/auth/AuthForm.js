@@ -7,6 +7,7 @@ const AuthForm = ({ user, flag, onChange, onSubmit }) => {
       <form onSubmit={onSubmit} autoComplete="off">
         {flag && (
           <div>
+            <h1 class="about-heading"> Register for ICC:</h1>
             <div className="form-group">
               <label>First Name</label>
               <br />
@@ -17,7 +18,6 @@ const AuthForm = ({ user, flag, onChange, onSubmit }) => {
                 value={user.firstName}
                 onChange={onChange}
                 name="firstName"
-                placeholder="first name"
                 required
               />
             </div>
