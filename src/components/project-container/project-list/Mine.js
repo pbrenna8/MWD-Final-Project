@@ -8,8 +8,6 @@ import { SingleProject } from "./access-project/SingleProject.js";
 
 export const MyProject = ({projects}) => {
   // get data for the projects
-
-
   // TODO: Create feature that does not need a hard coded user ID/many to many relation
   function clickStatus() {
     alert("This project is in process!");

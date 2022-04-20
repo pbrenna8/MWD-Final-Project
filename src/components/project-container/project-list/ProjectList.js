@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from 'react';
 import {Link} from "react-router-dom";
 import Parse from "parse";
 
@@ -6,11 +6,9 @@ import Parse from "parse";
 import { getProjectsByUser, removeProject, getAllProjects, getProjectsNotByUser } from "../../../services/projects/projects.js";
 import { SingleProject } from "./access-project/SingleProject.js";
 import { MyProject } from "./Mine.js";
+import { render } from '@testing-library/react';
 
 var select;
-var track1;
-var track2;
-var track3;
 
 
 export default function ProjectList() {
@@ -18,11 +16,16 @@ export default function ProjectList() {
   const [projects, setProjects] = React.useState([]);
   const [All, setAll] = React.useState([]);
   const [Other, setOther] = React.useState([]);
-
+  const [filter, setFilter] = React.useState({
+    track1: false, 
+    track2: false, 
+    track3: false
+  }); 
 
   // TODO: Create feature that does not need a hard coded user ID/many to many relation
   React.useEffect(() => {
-      getAllProjects().then((data) => {
+      // if equal to mine 
+    getAllProjects().then((data) => {
       setAll(data)
       });
 
@@ -33,6 +36,8 @@ export default function ProjectList() {
       getProjectsByUser(Parse.User.current().id).then((data) => {
       setProjects(data);
     });
+
+    
   }, []);
 
   const [remove, setRemove] = React.useState("");
@@ -54,6 +59,15 @@ export default function ProjectList() {
     }
   }, [projects, remove]);
 
+
+// initiliazes state variable, runs when select is changed
+  const [add, setAdd] = React.useState(false);
+
+// runs anytime add is changed
+  React.useEffect(() => {
+      setAdd(false)
+  }, [add]);
+
   // button alert for each project
   // TODO: find another mixed functionality for this
   function clickStatus() {
@@ -64,33 +78,36 @@ export default function ProjectList() {
 
   function getSelectedValue() {
       select = document.getElementById("project-select").value;
-      console.log(select); 
-      track1 = false;
-      track2 = false;
-      track3 = false;
+
+      // nullifies options not selected
+      filter.track1 = false;
+      filter.track2 = false;
+      filter.track3 = false;
+      
 
       if (select === "Mine"){
         console.log("inside Mine");
-        track1 = true;
-        console.log(track1)
+        filter.track1 = true;
+        console.log(filter.track1)
         
       }
       if (select === "Other"){
         console.log("inside Other");
-        track2 = true;
-        console.log(track2)
+        filter.track2 = true;
+        console.log(filter.track2)
         
       }
       if (select === "All"){
         console.log("inside All");
-        track3 = true;
-        console.log(track3)
+        filter.track3 = true;
+        console.log(filter.track3)
         
       }
+      setAdd(true) // triggers use effect that re-renders page according to what user selected
   }
 
 
-  //{project.get("user").get("username") }
+  
   // return the project cards
   return(
     <div>
@@ -104,18 +121,12 @@ export default function ProjectList() {
     <option value="Other">Other Projects</option>
     <option value="All">All Projects</option>
 </select> 
+<hr></hr>
 <div>
-
-{track1 && (
-  <MyProject
-  projects={projects}
-
-  />)}
-
 </div>
 
 
-
+{filter.track1 &&
 <ul>
       {projects.map((project) =>(
         <div>
@@ -139,8 +150,9 @@ export default function ProjectList() {
       ))}
       
     </ul>
-    <hr></hr>
-
+}
+    
+{filter.track3 &&
     <ul>
       {All.map((project) =>(
         <div>
@@ -162,8 +174,9 @@ export default function ProjectList() {
           </div>
       ))}
     </ul>
-    <hr></hr>
-
+}
+   
+{filter.track2 &&
     <ul>
       {Other.map((project) =>(
         <div>
@@ -185,7 +198,8 @@ export default function ProjectList() {
           </div>
       ))}
     </ul>
-    <hr></hr>
+}
+    
     <Link to="/ProjectCreate"><button>Create a Project</button></Link>
     </div>
   );
