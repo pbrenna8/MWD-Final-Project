@@ -79,3 +79,18 @@ Student A - Molly Doyle
 ### Fixed
  
 - N/A
+
+Student B - PJ Brennan
+ 
+### Added
+- Hosted on Digital Ocean
+- Added Project Create and Delete Functions
+- Added Cypress testing features for Login and Register
+
+### Changed
+- N/A
+ 
+### Fixed
+ 
+- Manual URL typing authentication errors from Feature 6
+- Ensured Logout was in the right place
