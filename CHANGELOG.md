@@ -93,4 +93,3 @@ Student B - PJ Brennan
 ### Fixed
  
 - Manual URL typing authentication errors from Feature 6
-- Ensured Logout was in the right place
