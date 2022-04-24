@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import {createProject} from "../../services/projects/projects";
 import ProjectCreate from "./ProjectCreate";
 import { useHistory } from "react-router-dom";
+import Parse from "parse";
 
 export default function CreateContainer() {
     // Flags in the state to watch for add updates
@@ -28,6 +29,7 @@ export default function CreateContainer() {
             `You successfully created a new project titled: ${projectCreated.get("name")}!`
           );
         }
+        console.log(projectCreated);
         setAdd(false);
         setProjects([...projects, projectCreated]);
       });
@@ -54,7 +56,6 @@ export default function CreateContainer() {
       ...project,
       [name]: newValue
     });
-
   };
 
   return <div><ProjectCreate onClickHandler={onClickHandler} onChangeHandler={onChangeHandler}/></div>;

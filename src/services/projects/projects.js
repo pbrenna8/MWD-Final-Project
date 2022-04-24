@@ -53,10 +53,17 @@ export const createProject = (newProject) => {
   console.log("Creating: ", newProject.name);
   const Project = Parse.Object.extend("Projects");
   const project = new Project();
+  var userPointer = {
+    __type: 'Pointer',
+    className: '_User',
+    objectId: Parse.User.current().id
+  }
+
   // using setter to UPDATE the object
   project.set("name", newProject.name);
   project.set("description", newProject.description);
   project.set("leaders", newProject.leaders);
+  project.set("user", userPointer);
   console.log("Project: ", newProject);
   return project.save().then((result) => {
     // returns new Project object
@@ -78,6 +85,7 @@ export const removeProject = (id) => {
 export const getAllProjects = () => {
   const Project = Parse.Object.extend("Projects");
   const query = new Parse.Query(Project);
+  console.log("getting all");
   return query.find().then((result) => {
     return result;
   });
