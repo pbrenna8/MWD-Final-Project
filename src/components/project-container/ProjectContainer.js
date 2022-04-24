@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 
 // container for the project cards
 export default function ProjectContainer() {
+
+  //check manual URL typing authorization
   const history = useHistory();
   const goBackHandler = () => {
     history.goBack();

@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { Link } from "react-router-dom"; 
 
 export default function About() {
+  //check manual URL typing authorization
   let flag = false;
   if(Parse.User.current() !== null){
         flag = true;

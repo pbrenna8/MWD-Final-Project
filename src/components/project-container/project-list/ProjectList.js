@@ -211,9 +211,6 @@ export default function ProjectList() {
         <div class="fancy-button">
         <Link to="/ProjectCreate"><button class="create-button">Create a Project</button></Link></div> 
         <br></br>
-        </div>
-
-
-        
+        </div>        
   );
 }
