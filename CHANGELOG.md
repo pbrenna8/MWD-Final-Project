@@ -83,7 +83,7 @@ Student A - Molly Doyle
 Student B - PJ Brennan
  
 ### Added
-- Hosted on Digital Ocean
+- Hosted on Digital Ocean (https://my-app-rkf3p.ondigitalocean.app/)
 - Added Project Create and Delete Functions
 - Added Cypress testing features for Login and Register
 
